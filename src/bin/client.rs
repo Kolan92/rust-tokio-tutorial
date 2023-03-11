@@ -70,7 +70,6 @@ async fn main() {
             }
         }
     });
-    t1.await.unwrap();
-    t2.await.unwrap();
-    manager.await.unwrap();
+
+    _ = tokio::join!(t1, t2, manager,);
 }
